@@ -76,5 +76,3 @@ def compressImage(path,outdir):
         im.save(outdir+"/"+filename,quality=qlty,optimize=True)
 
 compressImage(path,outdir)
-print(colored("#Created by KarthikSB & iamharsh.dev", 'white', 'on_green'))
-print(colored("#LOL BYE#", 'white', 'on_green'))
