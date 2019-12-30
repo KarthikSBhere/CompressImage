@@ -29,21 +29,25 @@ print(colored("""
 print(colored("#Created by KarthikSB & iamharsh.dev", 'white', 'on_green'))
 print('\n')
 
+
 #importing location
+print("\n")
 imageDir= input(colored(" Enter the location of image folder  ",'green'))
 
 if imageDir.endswith("/"):
     imageDir.replace("/","")
 
-path =glob.glob(imageDir+'/'+"*")
-print("\n")
+path =glob.glob(imageDir+"/"+'*')
+
 
 #expoting location
+print("\n")
+
 outdir =input(colored(" Enter where to Export ",'green'))
 if outdir.endswith("/"):
     outdir.replace("/","")
-
-#quality choice
+  
+  #quality
 print("\n")
 def UserQuality(decision):
     
@@ -54,6 +58,7 @@ def UserQuality(decision):
         return 50
 
 def compressImage(path,outdir):
+
     qlty =""
     quality =input("The default Quality is 50%. do u wanna change?  Y/N  ")
     if quality == "Y":
@@ -62,7 +67,9 @@ def compressImage(path,outdir):
            qlty= UserQuality("N")
     else:
             print("invalid command")
-    for im in path: 
+    for im in path:
+        
+        
         filename =os.path.basename(im)
         im =Image.open(im)
         im.resize((10,10))
@@ -70,6 +77,6 @@ def compressImage(path,outdir):
 
         im.save(outdir+"/"+filename,quality=qlty,optimize=True)
 
-compressImage(path,outdir) # calling function
+compressImage(path,outdir)
 print(colored("#Created by KarthikSB & iamharsh.dev", 'white', 'on_green'))
 print(colored("#LOL BYE#", 'white', 'on_green'))
