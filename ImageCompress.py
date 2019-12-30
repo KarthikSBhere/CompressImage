@@ -43,15 +43,32 @@ outdir =input(colored(" Enter where to Export ",'green'))
 if outdir.endswith("/"):
     outdir.replace("/","")
 
+#quality choice
+print("\n")
+def UserQuality(decision):
+    
+    if decision=="Y":
+        i =int(input("Enter the Quality between 0 to 100  "))
+        return i
+    elif decision=="N":
+        return 50
 
-#magic happens :)
-def compressImage(path,outdir): #function
-    for im in path: #for loop to get all images inside a folder lol
+def compressImage(path,outdir):
+    qlty =""
+    quality =input("The default Quality is 50%. do u wanna change?  Y/N  ")
+    if quality == "Y":
+          qlty=  UserQuality("Y")
+    elif quality == "N":
+           qlty= UserQuality("N")
+    else:
+            print("invalid command")
+    for im in path: 
         filename =os.path.basename(im)
         im =Image.open(im)
         im.resize((10,10))
         print(im.format, im.size, im.mode)
-        im.save(outdir+"/"+filename,quality=50,optimize=True)
+
+        im.save(outdir+"/"+filename,quality=qlty,optimize=True)
 
 compressImage(path,outdir) # calling function
 print(colored("#Created by KarthikSB & iamharsh.dev", 'white', 'on_green'))
