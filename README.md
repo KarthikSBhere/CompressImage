@@ -1,0 +1,2 @@
+# CompressImage
+Image compressing tool
