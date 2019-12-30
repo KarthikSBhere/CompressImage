@@ -7,4 +7,6 @@
 # Installation
 
 pip install - requirement.txt
+
+
 python ImageCompress.py
