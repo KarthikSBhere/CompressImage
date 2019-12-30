@@ -27,8 +27,6 @@ print(colored("""
 """,'green'))
 #don't touch the line below :) !!
 print(colored("#Created by KarthikSB & iamharsh.dev", 'white', 'on_green'))
-print('\n')
-
 
 #importing location
 print("\n")
