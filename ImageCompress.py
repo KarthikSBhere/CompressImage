@@ -35,7 +35,7 @@ imageDir= input(colored(" Enter the location of image folder  ",'green'))
 if imageDir.endswith("/"):
     imageDir.replace("/","")
 
-path =glob.glob(imageDir+"/*jpg")
+path =glob.glob(imageDir+"/"+'*')
 
 
 #expoting location
